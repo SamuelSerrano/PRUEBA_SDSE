@@ -1,0 +1,38 @@
+﻿@model List<WebClima.Models.ViewModels.ClimaAdViewModel>
+
+@{
+    ViewBag.Title = "Clima";
+}
+
+<h2>@ViewBag.Title</h2>
+<div class="row" style="text-align:right; padding:5px">
+    <a href="~/Admin/Insert" class="btn btn-primary">Nuevo</a>
+</div>
+<div class="row">
+    <div class="col-md-12">
+		<table class="table-bordered">
+			<tr>
+				<th>#</th>
+				<th>Ciudad</th>
+				<th>Clima</th>
+				<th>Temp. Max</th>
+				<th>Temp. Min</th>
+			</tr>
+			@if (Model != null)
+			{
+				foreach (var elemento in Model)
+				{
+					<tr>
+						<td>@elemento.Id</td>
+						<td>@elemento.NombreCiudad</td>
+						<td>@elemento.NombreClima</td>
+						<td>@elemento.TempMax</td>
+						<td>@elemento.TempMin</td>
+					</tr>
+				}
+			}
+
+		</table>
+    </div>
+</div>
+

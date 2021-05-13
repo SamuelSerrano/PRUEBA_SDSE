@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+
+<div class="wrapper fadeInDown">
+	<div id="formContent">
+		<!-- Tabs Titles -->
+		<p>@ViewData["Error"]</p><br />
+		<!-- Login Form -->
+		<form action="@Url.Content("~/Acceso/Login")" method="post">
+			<input type="text" id="login" class="fadeIn second" name="user" placeholder="login">
+			<input type="password" id="password" class="fadeIn third" name="pass" placeholder="password">
+			<input type="submit" class="fadeIn fourth" value="Log In">
+		</form>
+
+		<!-- Remind Passowrd -->
+		<div id="formFooter">
+			<p>@ViewData["Message"]</p>
+		</div>
+
+	</div>
+</div>
+

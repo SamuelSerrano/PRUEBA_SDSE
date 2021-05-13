@@ -1,0 +1,38 @@
+﻿@model List<WebClima.Models.ViewModels.ClimaAdViewModel>
+@{
+	ViewBag.Title = "Index";
+}
+
+<h2>Consulta</h2>
+
+<div class="container">
+	<div class="row">
+		<div class="col-lg-2">
+			@if (Model != null)
+			{
+				foreach (var elemento in Model)
+				{
+					<div class="card" style="width: 18rem;">
+						<div class="card-header">
+							@elemento.NombreCiudad
+						</div>
+						<div class="card-body">
+							<h6 class="card-subtitle mb-2 text-muted">@elemento.NombreClima</h6>
+							<ul class="list-group list-group-flush">
+								<li class="list-group-item"><b>Temp Max:@elemento.TempMax </b> </li>
+								<li class="list-group-item"><b>Temp Min:@elemento.TempMin</b></li>
+							</ul>
+						</div>
+						<div class="card-footer text-muted">
+							@elemento.Fecha
+						</div>
+					</div>
+					
+						
+				}
+			}
+
+		</div>
+	</div>
+</div>
+

@@ -1,0 +1,50 @@
+﻿@using WebClima.Models
+@model WebClima.Models.ViewModels.ClimaAdViewModel
+
+
+@{
+	ViewBag.Title = "New registro Clima";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("Insert", "Admin", FormMethod.Post))
+{
+	<div class="row">
+		<div class="col-md-12">
+			<div>
+				@Html.LabelFor(d => d.IdClima)
+				@Html.DropDownListFor(d => d.IdClima, (IEnumerable<SelectListItem>)ViewBag.Clima, new { @class = "form-control" })
+			</div>
+			
+		<div>
+			@Html.LabelFor(d => d.IdCiudad)
+			@Html.DropDownListFor(d => d.IdCiudad, (IEnumerable<SelectListItem>)ViewBag.Ciudad, new { @class = "form-control" })
+		</div>
+			
+		<div>
+			@Html.LabelFor(d => d.TempMax)
+			@Html.TextBoxFor(d => d.TempMax, "", new { @class = "form-control" })
+			@Html.ValidationMessageFor(d => d.TempMax, "", new { @class = "danger" })
+		</div>
+			
+		<div>
+			@Html.LabelFor(d => d.TempMin)
+			@Html.TextBoxFor(d => d.TempMin, "", new { @class = "form-control" })
+			@Html.ValidationMessageFor(d => d.TempMin, "", new { @class = "danger" })
+		</div>
+			
+		<div>
+			@Html.LabelFor(d => d.Fecha)<br />
+			@Html.EditorFor(d => d.Fecha, "", new { @class = "form-control" })
+			
+		</div>
+			
+			<br />
+			<div style="text-align:right">
+				<input value="Gruardar" class="btn btn-default" type="submit" />
+			</div>
+		</div>
+	</div>
+}
+
